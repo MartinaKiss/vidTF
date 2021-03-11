@@ -1,0 +1,92 @@
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title> Regisztrációs Űrlap</title>
+  <meta name="author" content="Martina Kiss">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <div class="page-header">
+    <img src="img/vtep.png" class="logo-img"></img>
+  </div>
+  <div class="container">
+  <form class="register-form">
+    <div class="field-container">
+      <h1>Regisztráció</h1>
+    </div>
+    <div class="field-container">
+      <label for="username"><b>Felhasználónév: </b></label>
+      <input type="text" placeholder="Felhasználónév" name="username" id="username" required>
+    </div>
+    <div class="field-container">
+      <label for="email"><b>Email cím: </b></label>
+      <input type="text" placeholder="Email cím" name="email" id="email" required>
+    </div>
+    <div class="field-container">
+      <label for="fullname"><b>Teljes név: </b></label>
+      <input type="text" placeholder="Teljes név" name="fullname" id="fullname" required>
+    </div>
+    <div class="field-container">
+      <label for="regnumber"><b>Videoton törzsszám: </b></label>
+      <input type="text" placeholder="Videoton törzsszám" name="regnumber" id="regnumber">
+    </div>
+    <div class="field-container">
+      <label for="password"><b>Jelszó: </b></label>
+      <input type="password" placeholder="Jelszó" name="password" id="password" required>
+    </div>
+    <div class="field-container">
+      <label for="password-repeat"><b>Jelszó újra: </b></label>
+      <input type="password" placeholder="Jelszó újra" name="password-repeat" id="password-repeat" required>
+    </div>
+    <div class="field-container">
+      <p class="termsparam">Fiókja létrehozásával elfogadja a <a href="#">Általános Szerződési Feltételeinket</a>.</p>
+      <div class="button-container">
+        <button id="submit" type="submit" class="registerbtn">Regisztrálok</button>
+        <div class="container-signin">
+          <p>Van már fiókja? <a href="#">Jelentkezzen be itt</a>.</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  const showNotification = () => {
+    // create a new notification
+    const notification = new Notification('A jelszavak nem egyeznek!');
+
+    // close the notification after 10 seconds
+    setTimeout(() => {
+        notification.close();
+    }, 5 * 1000);
+  }
+
+  let userName, email, fullName, regNumber, password;
+  const button = document.getElementById('submit');
+  button.addEventListener('click', async event => {
+    password = document.getElementById('password').value;
+    if (password == document.getElementById('password-repeat').value && password!='') {
+      userName = document.getElementById('username').value;
+      email = document.getElementById('email').value;
+      fullName = document.getElementById('fullname').value;
+      regNumber = document.getElementById('regnumber').value;
+      const data = { userName, email, fullName, regNumber, password };
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      };
+      const response = await fetch('/api', options);
+      const json = await response.json();
+      console.log(json);
+  }
+  else{
+    alert('A jelszavak nem egyeznek!');
+  }
+
+  });
+</script>
+</body>
+</html>

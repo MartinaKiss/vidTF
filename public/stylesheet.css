@@ -1,0 +1,83 @@
+body{
+  background-color: #6a81b8;
+}
+.container{
+  background-color: #ffffff;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 25px;
+  border-radius: 7px;
+}
+.page-header{
+  margin: auto;
+  width: 70%;
+  padding-left: 45px;
+  padding-right: 5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+img{
+  width: 600px;
+  margin-left: auto;
+  display: flex;
+  padding-bottom: 20px;
+}
+h1{
+  font-size: 45px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #102865;
+}
+.field-container{
+  padding: 20px;
+  width: 90%;
+  font-family: sans-serif;
+  color: #102865;
+  font-size: 24px;
+  margin: auto;
+}
+::placeholder{
+  color: #9fbae3;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.registerbtn{
+  background-color: #3d639c;
+  font-size: 26px;
+  padding: 15px;
+  border-radius: 7px;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+.termsparam{
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #102865;
+  padding-bottom: 20px;
+}
+a{
+  color: #13438a;
+}
+input{
+  height: 50px;
+  border-radius: 3px;
+  border-color: #ededed;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  color: #102865;
+}
+label{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.container-signin{
+  padding-left: 30px;
+  color: #102865;
+  font-size: 22px;
+}
+.button-container{
+  width: 100%;
+  display: inline-flex;
+}
