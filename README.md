@@ -19,7 +19,7 @@ Running the application:
     
     password: "your password",
     
-    database: "your table name"
+    database: "your database name"
     
   });
 
