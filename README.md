@@ -12,10 +12,15 @@ Running the application:
 - Update the following part in the script.js file according to your database properties:
 
   var con = mysql.createConnection({
+    
     host: "localhost",
+    
     user: "your user name",
+    
     password: "your password",
+    
     database: "your table name"
+    
   });
 
 - Run the following command in a terminal or command line opened in the project directory:
