@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 
-const tablename = 'vidusers';
+const tablename = 'users';
 
 const app = express();
 app.listen(3000, () => console.log('listening at 3000'));
@@ -11,9 +11,9 @@ app.use(express.json({ limit: '1mb' }));
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "martina",
-  password: "Inferno97",
-  database: "vidiebed"
+  user: "username",
+  password: "password",
+  database: "databasename"
 });
 
 app.post('/api', (request, response) => {
@@ -34,5 +34,4 @@ app.post('/api', (request, response) => {
   });
 
   response.json(data);
-  console.log(data);
 });
